@@ -1,0 +1,44 @@
+{
+  "access_worlds": [
+    "personal"
+  ],
+  "authority": "canonical_reference",
+  "canon_status": "canonical",
+  "capture_date": "2026-07-16T10:00:00Z",
+  "captured_by": "manual_setup_user",
+  "entities": [
+    "Ana N.",
+    "Carlos R."
+  ],
+  "evidence": "Declaración explícita del usuario en sesión de configuración.",
+  "forbidden_use": [
+    "external_share_without_transform",
+    "auto_write_canon"
+  ],
+  "id": "obj-membrane-001-20260716100000",
+  "inference": "Mundo personal restringido al propio usuario por defecto.",
+  "layer": "membrane",
+  "limits": [
+    "Solo el usuario autoriza cambios en esta regla."
+  ],
+  "platform_origin": "manual",
+  "provenance_hash": "sha256:96587b3bae225698ce36c5ee762584c9871d918b1f3766f47805eff40309cf60",
+  "provenance_status": "verified",
+  "relations": [],
+  "retention": "permanent",
+  "review_status": "reviewed",
+  "sensitivity": "restricted",
+  "source_date": "2026-07-16",
+  "source_locator": {
+    "file": "reglas-mundos.json",
+    "line": 1
+  },
+  "summary": "Regla de membrana: mundo personal, acceso restringido al usuario.",
+  "tags": [
+    "membrana",
+    "personal",
+    "gobierno"
+  ],
+  "title": "Regla de membrana — mundo personal",
+  "world": "personal"
+}

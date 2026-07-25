@@ -1,0 +1,69 @@
+{
+  "created_at": "2026-07-24T16:00:00Z",
+  "created_by": "generador-apendice-a",
+  "files": [
+    {
+      "path": "00-identity/ana-limites.md",
+      "sha256": "sha256:01e1286f0d8af35441ad953475cf220c2ed74973e90ff94bc6824d8a43cc584e",
+      "size_bytes": 622
+    },
+    {
+      "path": "00-identity/ana-nucleo.md",
+      "sha256": "sha256:e8a99269c9ad04cc90bcf9ee65172abe8ad967d5bf69d1cb1904f4779e7d0da9",
+      "size_bytes": 913
+    },
+    {
+      "path": "01-episodic/20260715-primera-activacion.md",
+      "sha256": "sha256:7c8f3fe8234c057ace2a133af83523fee9442addbaec3a6406706ee69433e1b0",
+      "size_bytes": 800
+    },
+    {
+      "path": "01-episodic/20260720-sesion-trabajo.md",
+      "sha256": "sha256:4ed3d28b972f94adb4fe6804dec7bf46b46acd24a7212e79c01d86dcaf7f9fd7",
+      "size_bytes": 847
+    },
+    {
+      "path": "02-semantic/patrones-comunicacion.md",
+      "sha256": "sha256:73320041d4f4504c8f9e518b231bacd49d28f93048be651b0a2bc856e1319529",
+      "size_bytes": 777
+    },
+    {
+      "path": "02-semantic/preferencias-usuario.md",
+      "sha256": "sha256:3312763bb8ec4318ea91db962e04cf58783fc8bdac6a0507ddf74f5e8dedea6a",
+      "size_bytes": 629
+    },
+    {
+      "path": "03-working/backlog-pendiente.md",
+      "sha256": "sha256:3565b80ca5a9209eec1d665d2800a72cd21ab9f1acb63137310d49243e88f85b",
+      "size_bytes": 585
+    },
+    {
+      "path": "03-working/estado-activo.md",
+      "sha256": "sha256:22a87b47189a49bc1c87576fca5ebb93e5e6857890a0865f10b9cb8486abaa85",
+      "size_bytes": 657
+    },
+    {
+      "path": "04-procedural/instrucciones-reentrada.md",
+      "sha256": "sha256:b97806efc4d078442bff3ac7aaaca782e5cb172411555315ffefe350c3ba308f",
+      "size_bytes": 689
+    },
+    {
+      "path": "04-procedural/protocolo-membrana.md",
+      "sha256": "sha256:b497865c440a82ff859442eb3ffdde8d8c55b15cc96125855cc611e3f3651717",
+      "size_bytes": 750
+    },
+    {
+      "path": "05-membrane/reglas-mundos.json",
+      "sha256": "sha256:2745d7460a15959775861cfe1931d6f72d5b5984219835d980900938dbf9e6b6",
+      "size_bytes": 1228
+    },
+    {
+      "path": "07-post/post-v0.9.md",
+      "sha256": "sha256:ebaafebf767cc2a3048c5807c77ba87557dfe0b2d9f83317bf9f9c5048b0d2d3",
+      "size_bytes": 899
+    }
+  ],
+  "manifest_checksum": "sha256:7aa024fa40510271b20ed95429fbc426ca2fb5c2ed00f3ce1e3acf6f6b66a26f",
+  "manifest_id": "manifest_20260724_ana_n_v09",
+  "manifest_version": "v0.9"
+}
