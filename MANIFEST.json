@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-07-28T13:37:00Z",
+  "created_by": "espina-spec-release-tramo4",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "sha256:ec2ed5f643c328d87bb0412e636426aa4eaaf4e7100a83ad1394f14abe3193d2",
+      "size_bytes": 36
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "sha256:2520a6afe8638632374aca90723674a52e549d4949768e7d9a4fc65994f6bba8",
+      "size_bytes": 859
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "sha256:ec43375056415bc0507c37d207044d82d0265af5e8e4aab58b24105e040e66a6",
+      "size_bytes": 1352
+    },
+    {
+      "path": "ESPINA_Especificacion_Publica_v0.9_COMPLETA.md",
+      "sha256": "sha256:3981dcc28a9ff268eb23186d341c6595a6a6a903581d7587702b7e871f0f1cc2",
+      "size_bytes": 71664
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "sha256:2ee594d0f72afb84e58c3c6c30c182d2b4a570f91901b4aea8de7b356d067205",
+      "size_bytes": 17812
+    },
+    {
+      "path": "README.md",
+      "sha256": "sha256:097b34624b20fec3afcd72a5997875daf40b7fb477acc308e0d1c91a68092b2c",
+      "size_bytes": 1716
+    }
+  ],
+  "manifest_checksum": "sha256:295dc957a1671b4727a82cd122890526cdd68770a73483d78330257d5466543c",
+  "manifest_id": "manifest_20260728_001",
+  "manifest_version": "v0.9"
+}

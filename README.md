@@ -1,61 +1,33 @@
-# ESPINA v0.9 — Entity Portability & Memory
+# Espina · EPM v0.9
 
-> **English (10 lines max):** ESPINA is an open file format and verification ruleset for the *operated identity* of personal AI entities — who they are, what they know with provenance, how they decide what to share, and how they wake up. It is not just portable memory: it is governed identity. The user owns the spine; the engine is rented.
+> Entity Portability & Memory — an open format for portable operational identity of personal AI entities.
 
-## Qué es Espina en 3 frases
+Espina defines a file format and verification rules so that the **operational identity** of a personal AI entity — who it is, what it knows with provenance, how it decides what to share, and how it wakes up — is **owned by the user**: a self-contained set of files (the "spine") that lives on the user's disk or personal cloud, is cryptographically sealed, and can activate that same entity in any compatible language engine. The user owns the spine; the engine is rented.
 
-1. **Identidad operada, no solo memoria portable:** Espina especifica quién es la entidad, con qué voz opera, qué puede viajar a qué destino, cómo se verifica y cómo despierta — no solo "qué recuerda".
-2. **Membrana fail-closed:** Ningún contenido viaja a un destino sin pasar un filtro de sensibilidad definido por el usuario. La ausencia de filtro no es un default válido.
-3. **Verificabilidad mecánica sin terceros:** Todo contenido canónico lleva procedencia comprobable por hashes SHA-256; la verificación es posible offline con herramientas estándar.
+## Status
 
-## Cómo verificar en 3 pasos
+**v0.9 — public draft.**  
+v1.0 will be released when the reference implementation completes its invariant battery (gate RC-1).
 
-```bash
-# 1. Clonar
-git clone https://github.com/espina-spec/espina-spec.git
-cd espina-spec
+## How to verify the specification offline
 
-# 2. Ejecutar verificador
-python tools/verificar.py
+The specification includes a fully worked, copy-pasteable verification script in **Appendix A.5**. The script:
 
-# 3. Resultado esperado
-# "Todos los hashes coinciden"
-# "manifest_checksum verificado correctamente"
-```
+1. Recomputes SHA-256 hashes for every file listed in a manifest.
+2. Recomputes the manifest checksum (excluding the checksum field itself).
+3. Recomputes the package checksum for activation packages (excluding the checksum field).
 
-## Estado v0.9
+Run it with any standard Python 3 installation; no external dependencies required. See §5.3 of the specification for the step-by-step procedure.
 
-Esta es la especificación pública v0.9, publicada el 2026-07-24.
+## How to start
 
-**Qué SÍ cubre:**
-- Estructura de la espina (7 capas)
-- Membrana (mundos × sensibilidad × destinos)
-- Paquetes de activación con safety frame
-- POST (batería de autocomprobación)
-- Verificación offline por hashes SHA-256
+Read the full specification: [`ESPINA_Especificacion_Publica_v0.9_COMPLETA.md`](ESPINA_Especificacion_Publica_v0.9_COMPLETA.md)
 
-**Qué NO cubre (declarado explícitamente):**
-- Firma criptográfica con clave privada del usuario
-- Árboles de hashes (Merkle)
-- Re-sincronización en caliente de instancias ya activas
+## License
 
-Estos elementos son candidatos a v1.x. Los hashes simples de v0.9 verifican **INTEGRIDAD**, no autoría.
+- **Specification text:** [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE)
+- **Code in appendices (e.g., the verification script in Appendix A.5):** [MIT License](https://opensource.org/license/mit)
 
-## Gobernanza
+## Organization
 
-- **Autoridad actual:** the Aster project
-- **Transferencia planificada:** Aster RC Co. (en constitución) al completarse su registro
-- **Proceso:** Propuestas públicas → evaluación contra implementación de referencia → decisión razonada publicada
-
-## Licencias
-
-- **Texto de la especificación (ESPINA_v0.9.md, README.md, documentos de espina):** [CC BY 4.0](./LICENSE-ESPINA)
-- **Herramientas, scripts y código (tools/):** [MIT](./LICENSE-TOOLS)
-
-## Aviso sintético
-
-**Ana N.** es una entidad de juguete completamente sintética. Ningún dato real de ninguna persona real aparece en este repositorio. Todos los ejemplos son ficticios.
-
----
-
-*Espina · Entity Portability & Memory (EPM) v0.9*
+<https://github.com/espina-spec>
