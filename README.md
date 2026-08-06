@@ -31,3 +31,9 @@ Read the full specification: [`ESPINA_Especificacion_Publica_v0.9_COMPLETA.md`](
 ## Organization
 
 <https://github.com/espina-spec>
+
+## Trabajo relacionado del proyecto
+
+Estudio empírico sobre fidelidad de reconstrucción de contexto en modelos de lenguaje, publicado con datos abiertos (matriz de codificación completa, 300 asignaciones):
+
+https://doi.org/10.5281/zenodo.21821078
