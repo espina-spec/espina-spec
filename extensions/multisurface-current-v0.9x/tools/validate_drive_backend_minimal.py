@@ -125,10 +125,24 @@ def validate(root: pathlib.Path) -> tuple[list[str], list[str], list[str]]:
         events_path = root / events_rel
         if events_path.exists():
             lines = [line for line in events_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+            event_hashes = set()
+            for index, line in enumerate(lines, start=1):
+                try:
+                    event = json.loads(line)
+                except json.JSONDecodeError as exc:
+                    failures.append(f"event log line {index} is invalid JSON: {exc}")
+                    continue
+                if event.get("event_hash"):
+                    event_hashes.add(event["event_hash"])
             if lines:
                 passes.append(f"events_present count={len(lines)}")
             else:
                 warnings.append("latest event log is empty; CONTINUITY_OK requires a verified accepted_head")
+            if accepted_head:
+                if accepted_head in event_hashes:
+                    passes.append("accepted_head_found_in_event_log")
+                else:
+                    failures.append("accepted_head is not present as event_hash in latest event log")
 
     if not (root / "00_espina" / "world_registry.json").exists():
         warnings.append("00_espina/world_registry.json is not present in template")

@@ -1,7 +1,7 @@
 {
   "manifest_id": "manifest_espina_v09x_multisurface_current_draft_20260807",
   "manifest_version": "v0.9x-draft",
-  "created_at": "2026-08-07T10:20:14Z",
+  "created_at": "2026-08-07T10:27:21Z",
   "created_by": "build_extension_manifest.py",
   "scope": "Espina v0.9.x Multisurface CURRENT Extension Draft",
   "private_material_excluded": true,
@@ -138,8 +138,8 @@
     },
     {
       "path": "tools/validate_drive_backend_minimal.py",
-      "sha256": "sha256:04eb1c90bd42a5d13e9a2e3765c81f320bb519801e86a9b15c66d6837c7e3d6a",
-      "size_bytes": 6277
+      "sha256": "sha256:72b9b2a2ee299e214f213d577a87d11126858d4e88718a166d7c58f579795146",
+      "size_bytes": 6977
     },
     {
       "path": "tools/validate_event_chain.py",
@@ -157,5 +157,5 @@
       "size_bytes": 8186
     }
   ],
-  "manifest_checksum": "sha256:4a3d832f6fa14eeab5e48f1bf21d517bf9fae8782fa85630c9cc55265b95d071"
+  "manifest_checksum": "sha256:43f56f56d0300d85642429c9963bf8d224310e53c42e2a8ca03eb48d11249ec4"
 }
