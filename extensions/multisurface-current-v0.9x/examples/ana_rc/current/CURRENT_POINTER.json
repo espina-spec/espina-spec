@@ -1,0 +1,10 @@
+{
+  "rc_id": "ana_rc",
+  "current_id": "current_2026_08_07_main",
+  "current_state_path": "current/state/CURRENT_STATE.json",
+  "updated_at": "2026-08-07T08:35:00Z",
+  "authority": "human_root",
+  "continuity_status": "CONTINUITY_PARTIAL",
+  "seal_status": "unsigned_example",
+  "notes": "Ejemplo ficticio para validar estructura, no continuidad real."
+}

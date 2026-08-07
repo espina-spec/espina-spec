@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://espina.example/schemas/current_contract.schema.json",
+  "title": "Espina CURRENT Contract",
+  "type": "object",
+  "required": ["contract_version", "rc_id", "current_definition", "continuity_states", "operations", "permission_levels"],
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": { "type": "string" },
+    "rc_id": { "type": "string", "minLength": 1 },
+    "current_definition": { "type": "string", "minLength": 1 },
+    "current_pointer_policy": { "type": "string" },
+    "continuity_states": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["CONTINUITY_OK", "CONTINUITY_PARTIAL", "CURRENT_STALE", "CURRENT_DIVERGENT", "CURRENT_UNKNOWN", "DEGRADED_MODE", "BLOCKED"]
+      },
+      "uniqueItems": true
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["read_current", "append_event", "propose_state_update", "commit_working_state", "commit_current_state", "modify_center_or_membrane"]
+      },
+      "uniqueItems": true
+    },
+    "permission_levels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["label", "allowed_operations"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string" },
+          "allowed_operations": {
+            "type": "array",
+            "items": { "type": "string" },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "human_authority_required_for": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    }
+  }
+}

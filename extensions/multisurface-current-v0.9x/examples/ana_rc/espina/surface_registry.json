@@ -1,0 +1,48 @@
+{
+  "registry_version": "1.0",
+  "rc_id": "ana_rc",
+  "surfaces": {
+    "chatgpt_web": {
+      "label": "ChatGPT Web",
+      "type": "llm_chat",
+      "permission_level": 2,
+      "capabilities": {
+        "can_read_storage": false,
+        "can_write_storage": false,
+        "can_run_tools": false,
+        "can_send_messages": false,
+        "can_receive_files": true
+      },
+      "degradation_modes": ["manual_activation_package", "proposal_only"],
+      "notes": "Puede proponer actualizaciones, no consolidar estado."
+    },
+    "codex_desktop": {
+      "label": "Codex Desktop",
+      "type": "agent_workspace",
+      "permission_level": 4,
+      "capabilities": {
+        "can_read_storage": true,
+        "can_write_storage": true,
+        "can_run_tools": true,
+        "can_send_messages": false,
+        "can_receive_files": true
+      },
+      "degradation_modes": ["read_only", "no_recent_memory"],
+      "notes": "Puede consolidar CURRENT si la continuidad es suficiente."
+    },
+    "telegram_bot": {
+      "label": "Telegram Bot",
+      "type": "messaging_surface",
+      "permission_level": 1,
+      "capabilities": {
+        "can_read_storage": true,
+        "can_write_storage": false,
+        "can_run_tools": false,
+        "can_send_messages": true,
+        "can_receive_files": false
+      },
+      "degradation_modes": ["append_only", "strict_membrane"],
+      "notes": "Puede registrar eventos simples, no consolidar estado."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://espina.example/schemas/world_registry.schema.json",
+  "title": "Espina World Registry",
+  "type": "object",
+  "required": ["registry_version", "rc_id", "worlds"],
+  "additionalProperties": false,
+  "properties": {
+    "registry_version": { "type": "string" },
+    "rc_id": { "type": "string", "minLength": 1 },
+    "worlds": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["status", "authority", "default_sensitivity"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string" },
+          "description": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["active", "restricted", "archived", "deprecated"]
+          },
+          "authority": { "type": "string" },
+          "default_sensitivity": {
+            "type": "string",
+            "enum": ["public", "internal", "private", "client_identifiable", "high", "restricted"]
+          },
+          "allowed_destinations": {
+            "type": "array",
+            "items": { "type": "string" },
+            "uniqueItems": true
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

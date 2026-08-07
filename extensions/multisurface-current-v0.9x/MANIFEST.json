@@ -1,0 +1,111 @@
+{
+  "manifest_id": "manifest_espina_v09x_multisurface_current_draft_20260807",
+  "manifest_version": "v0.9x-draft",
+  "created_at": "2026-08-07T08:26:08Z",
+  "created_by": "build_extension_manifest.py",
+  "scope": "Espina v0.9.x Multisurface CURRENT Extension Draft",
+  "private_material_excluded": true,
+  "files": [
+    {
+      "path": "ESPINA_v0.9x_MULTISURFACE_CURRENT_EXTENSION_DRAFT.md",
+      "sha256": "sha256:0b1ec8dc5726427607988836c60528c831c8f2decb14259f90e1ecb6bbd2b623",
+      "size_bytes": 6303
+    },
+    {
+      "path": "examples/ana_rc/activation/activation_package_001.json",
+      "sha256": "sha256:da5bfb0d29132003748e8adad623fcaea40842b8d3d884226b82f44a0559f654",
+      "size_bytes": 3730
+    },
+    {
+      "path": "examples/ana_rc/current/CURRENT_POINTER.json",
+      "sha256": "sha256:47dec219cdf68b174f0396d7628a7fa468637cb0dba28210f9eadd017364f01e",
+      "size_bytes": 355
+    },
+    {
+      "path": "examples/ana_rc/current/events/2026-08-07.jsonl",
+      "sha256": "sha256:c8b81add6d1c5b0335517d5bb371ad5e7573f481d94b85c0a1cf378f361c780f",
+      "size_bytes": 457
+    },
+    {
+      "path": "examples/ana_rc/current/state/CONTINUITY_STATUS.json",
+      "sha256": "sha256:87e6e228b761c204e55531845e5b18bbd79c348362870b0c6b7fc952487f2f69",
+      "size_bytes": 642
+    },
+    {
+      "path": "examples/ana_rc/current/state/CURRENT_STATE.json",
+      "sha256": "sha256:cf5fbf64bdb0de3ab4352ca317f87564a07808074bf6f58a4dc557725181c8ac",
+      "size_bytes": 760
+    },
+    {
+      "path": "examples/ana_rc/current/state/OPEN_LOOPS.json",
+      "sha256": "sha256:997ddbb6275b0ed30762a0d7d4286eead37908a7cecb3ed23ef16eb8d4226fcd",
+      "size_bytes": 278
+    },
+    {
+      "path": "examples/ana_rc/espina/current_contract.json",
+      "sha256": "sha256:285997602db83fe396e8a9fae8f2058da75301c6e7e7c42f0af27c133fcd5c19",
+      "size_bytes": 1836
+    },
+    {
+      "path": "examples/ana_rc/espina/surface_registry.json",
+      "sha256": "sha256:3812b38cfefa9f199fd2e8bf57f7b317c6603a92c1b9c44e4a560a7a405720d6",
+      "size_bytes": 1466
+    },
+    {
+      "path": "examples/ana_rc/espina/world_registry.json",
+      "sha256": "sha256:3a56377df936e7cfffd72728639a2b6dcb10dda1963ba301949684086f077c70",
+      "size_bytes": 952
+    },
+    {
+      "path": "examples/ana_rc/README.md",
+      "sha256": "sha256:568f7e7ab94e0bb3ca776996d30f3e6c85658edcf661015966c78f94b1c6dd0f",
+      "size_bytes": 554
+    },
+    {
+      "path": "README.md",
+      "sha256": "sha256:010587b42b9f5bd6b5abd963eb4f09022f2c5d8fb3f43671f36b348491a3483c",
+      "size_bytes": 1182
+    },
+    {
+      "path": "schemas/activation_package.schema.json",
+      "sha256": "sha256:9b02ce5d35369379ff2c56d8e69dd7fc196b3b99450bab8e418dd1b529ca960a",
+      "size_bytes": 4643
+    },
+    {
+      "path": "schemas/current_contract.schema.json",
+      "sha256": "sha256:459c6ae62a97d9f72cc80e09bdd19094403a497b76a6eb1b89272241182be6d8",
+      "size_bytes": 1711
+    },
+    {
+      "path": "schemas/current_event.schema.json",
+      "sha256": "sha256:685f9db3b991fa3b5d3e72be7fe41ab501e9941c4e8c2ccbd474ee8c7fbaf067",
+      "size_bytes": 1182
+    },
+    {
+      "path": "schemas/surface_registry.schema.json",
+      "sha256": "sha256:8e33d7610264c1af7a1178a96fadf9aa259a911747acaa80dd4bcf759a67ddd4",
+      "size_bytes": 1746
+    },
+    {
+      "path": "schemas/world_registry.schema.json",
+      "sha256": "sha256:65a7193ae0ebb2ec0b96cb4fc7deb9163348ca1ec20c9634c5ffbe3583e0e8e8",
+      "size_bytes": 1316
+    },
+    {
+      "path": "tools/build_extension_manifest.py",
+      "sha256": "sha256:65dd5631b48bded77b1f71290b31b459507f4af09378ad05a10768af44331fe4",
+      "size_bytes": 1992
+    },
+    {
+      "path": "tools/integrity_phase14.py",
+      "sha256": "sha256:3f2eb4d943f45b72265957fda0465ae19eafc286d42c3764373cf6bb2fafe9b5",
+      "size_bytes": 4069
+    },
+    {
+      "path": "tools/validate_rc_current.ps1",
+      "sha256": "sha256:9655fd984b1ffdcbce9435337658143fef5ad2bc7c73e2b7281a0e207c9afed6",
+      "size_bytes": 8186
+    }
+  ],
+  "manifest_checksum": "sha256:07f578ac6454f2640a0d823cd02b5f2291c6d87dc5935071f0cd69996ef1fffa"
+}

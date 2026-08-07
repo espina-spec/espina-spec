@@ -23,6 +23,10 @@ Run it with any standard Python 3 installation; no external dependencies require
 
 Read the full specification: [`ESPINA_Especificacion_Publica_v0.9_COMPLETA.md`](ESPINA_Especificacion_Publica_v0.9_COMPLETA.md)
 
+## Experimental extensions
+
+- [`Multisurface CURRENT Extension Draft`](extensions/multisurface-current-v0.9x/) explores reentry, continuity status, surface capability profiles, and CURRENT state for Espina v0.9.x. It is a draft extension, not v1.0.
+
 ## License
 
 - **Specification text:** [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE)

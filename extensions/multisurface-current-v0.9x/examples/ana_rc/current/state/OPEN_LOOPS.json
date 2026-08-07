@@ -1,0 +1,12 @@
+{
+  "rc_id": "ana_rc",
+  "open_loops": [
+    {
+      "id": "loop_001",
+      "world": "professional",
+      "summary": "Validar que la superficie puede leer CURRENT y declarar continuidad parcial.",
+      "status": "open",
+      "created_at": "2026-08-07T08:35:00Z"
+    }
+  ]
+}

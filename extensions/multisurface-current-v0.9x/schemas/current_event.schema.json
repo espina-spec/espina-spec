@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://espina.example/schemas/current_event.schema.json",
+  "title": "Espina CURRENT Event",
+  "type": "object",
+  "required": ["event_id", "timestamp", "rc_id", "surface", "event_type", "world", "summary"],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "rc_id": { "type": "string", "minLength": 1 },
+    "surface": { "type": "string", "minLength": 1 },
+    "event_type": {
+      "type": "string",
+      "enum": ["decision", "correction", "promise", "open_loop", "task_change", "world_change", "surface_reentry", "continuity_warning", "divergence_detected", "state_commit", "membrane_block", "membrane_transform", "canon_candidate"]
+    },
+    "world": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "state_impact": { "type": "string" },
+    "requires_commit": { "type": "boolean" },
+    "authority": { "type": "string" },
+    "refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    }
+  }
+}

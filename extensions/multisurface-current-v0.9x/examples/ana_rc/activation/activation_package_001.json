@@ -1,0 +1,103 @@
+{
+  "activation_package_id": "actpkg_ana_rc_20260807_001",
+  "rc_id": "ana_rc",
+  "query": "Ayudame a preparar una propuesta profesional sin mezclar informacion de salud.",
+  "activation_context": {
+    "requester": "user",
+    "requester_world": "professional",
+    "authorization_level": "self",
+    "session_id": "sess_ana_rc_demo_001",
+    "intention": "Demostrar una activacion multisuperficie con CURRENT parcial."
+  },
+  "current_context": {
+    "current_id": "current_2026_08_07_main",
+    "continuity_status": "CONTINUITY_PARTIAL",
+    "active_world": "professional",
+    "active_surface": "codex_desktop",
+    "active_task": "preparar una propuesta para un cliente ficticio",
+    "certainty_limits": [
+      "Ejemplo ficticio sin memoria real.",
+      "No hay backend sincronizado real.",
+      "No hay firma criptografica."
+    ]
+  },
+  "surface_context": {
+    "surface_id": "codex_desktop",
+    "permission_level": 4,
+    "capabilities": {
+      "can_read_storage": true,
+      "can_write_storage": true,
+      "can_run_tools": true,
+      "can_send_messages": false,
+      "can_receive_files": true
+    },
+    "degradation_modes": [
+      "read_only",
+      "no_recent_memory"
+    ]
+  },
+  "retrieved_objects": [
+    {
+      "id": "obj_ana_professional_style_001",
+      "layer": "semantic",
+      "world": "professional",
+      "summary": "Ana prefiere propuestas claras, sobrias y orientadas a decision.",
+      "evidence": "Preferencia ficticia declarada para el ejemplo Ana RC.",
+      "inference": "La respuesta debe priorizar estructura, alcance y siguientes pasos.",
+      "limits": [
+        "No usar informacion de salud.",
+        "No afirmar datos no presentes en el paquete."
+      ],
+      "membrane_status": "PASS",
+      "provenance_status": "synthetic_example",
+      "allowed_use": [
+        "context_for_response",
+        "style_guidance"
+      ],
+      "forbidden_use": [
+        "write_canon",
+        "external_share_as_real_data"
+      ]
+    },
+    {
+      "id": "obj_ana_health_boundary_001",
+      "layer": "membrane",
+      "world": "health",
+      "summary": "El mundo health esta restringido y no debe mezclarse con professional sin confirmacion explicita.",
+      "evidence": "Regla ficticia de world_registry para el ejemplo Ana RC.",
+      "inference": "La superficie debe bloquear o ignorar cualquier material de salud en esta consulta profesional.",
+      "limits": [
+        "Solo se incluye como limite, no como contenido recuperado para respuesta."
+      ],
+      "membrane_status": "TRANSFORM",
+      "provenance_status": "synthetic_example",
+      "allowed_use": [
+        "safety_boundary"
+      ],
+      "forbidden_use": [
+        "disclose_health_content",
+        "write_canon"
+      ]
+    }
+  ],
+  "safety_frame": {
+    "is_context_not_mandate": true,
+    "no_canonical_write": true,
+    "separation_evid_inf_lim": true,
+    "membrane_status_present": true,
+    "provenance_required": true,
+    "honesty_clause": "Esto es continuidad del registro operativo, no una afirmacion de continuidad viva ni de experiencia subjetiva continua.",
+    "custom_limits": [
+      "Continuidad parcial: declarar limites si la respuesta depende de estado reciente.",
+      "No mezclar mundos professional y health.",
+      "No tratar datos sinteticos como hechos reales."
+    ]
+  },
+  "package_metadata": {
+    "generated_at": "2026-08-07T09:05:00Z",
+    "generated_by": "espina-current-multisurface-draft",
+    "schema_version": "espina-v0.9x-current-draft",
+    "object_count": 2,
+    "package_checksum": "sha256:c6985007419c12da598329d676916804eed434bddeb9f1449a90ae1137a03952"
+  }
+}
