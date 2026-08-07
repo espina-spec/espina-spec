@@ -83,6 +83,12 @@ A surface should:
 7. Act within permission.
 8. Append or propose updates only when allowed.
 
+A step-by-step operational playbook for LLM surfaces is provided in:
+
+```text
+LLM_REENTRY_PLAYBOOK.md
+```
+
 ## Minimal Safety Rules
 
 ```text

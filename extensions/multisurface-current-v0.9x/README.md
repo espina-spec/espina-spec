@@ -30,6 +30,7 @@ examples/ana_rc/
 tools/validate_rc_current.ps1
 tools/validate_jsonschema.py
 tools/validate_event_chain.py
+tools/validate_drive_backend_minimal.py
 tools/build_extension_manifest.py
 reports/
 MANIFEST.json
@@ -37,6 +38,7 @@ LICENSE-NOTES.md
 PR_DRAFT.md
 FORKS_AND_CONCURRENCY.md
 DRIVE_BACKEND_MINIMAL.md
+LLM_REENTRY_PLAYBOOK.md
 ```
 
 ## License
