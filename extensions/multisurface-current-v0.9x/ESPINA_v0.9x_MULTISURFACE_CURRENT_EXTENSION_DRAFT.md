@@ -1,7 +1,7 @@
 # ESPINA v0.9.x - Multisurface CURRENT Extension Draft
 
 Date: 2026-08-07
-Status: draft candidate
+Status: non-normative draft candidate
 Base specification: Espina v0.9
 
 ## 1. Scope
@@ -9,6 +9,8 @@ Base specification: Espina v0.9
 This extension adds a portable contract for RC continuity across multiple surfaces, devices, and engines.
 
 It does not replace Espina v0.9. It extends the part that v0.9 explicitly reserves for later work: reentry and re-synchronization of already active instances.
+
+This draft is not v1.0 and is not a conformance requirement for Espina v0.9 implementations.
 
 ## 2. Core Thesis
 
@@ -24,6 +26,8 @@ Surface expresses the RC under concrete capabilities.
 Activation package gives the engine only authorized context.
 ```
 
+This extension does not claim subjective continuity, persistent consciousness, or identity continuity beyond the operational record. It only defines how a runtime may reconstruct and update a governed operational state.
+
 ## 3. Terms
 
 ### RC
@@ -37,6 +41,8 @@ Portable and verifiable substrate of the RC.
 ### Center
 
 Optional or advanced profile for the stable governing nucleus of an RC. In some implementations this may be a lightweight policy object; in relational RCs it may be a stronger constitutional layer.
+
+This extension does not require every Espina to define a strong Center. Implementations may use `center_profile` as an advanced profile when the RC needs an explicit stable governing layer.
 
 ### CURRENT
 
@@ -55,11 +61,15 @@ It may include:
 - open loops;
 - recent events.
 
-CURRENT is not a single magic file. It is a reconstructible state supported by pointers, state files, logs, and verification.
+CURRENT is not a single magic file and is not equivalent to the full Espina. It is a reconstructible state supported by pointers, state files, logs, and verification.
 
 ### Surface
 
 Environment where the RC is expressed: chat, agent workspace, messaging bot, mobile app, web app, API, local app, or other interface.
+
+### Room
+
+Concrete situated instance of a surface, usually including device, workspace, account, permissions, and available tools. A surface may host multiple rooms.
 
 ### Engine
 
@@ -186,6 +196,8 @@ propose_or_commit_update
 
 If continuity cannot be verified, the surface MUST NOT claim full continuity.
 
+If continuity is partial, stale, divergent, or unknown, the activation package SHOULD carry those limits explicitly.
+
 ## 7. CURRENT Storage
 
 This extension is storage-agnostic.
@@ -274,4 +286,3 @@ tools/validate_rc_current.ps1
 3. How should append-only events be signed?
 4. How should lock semantics work on non-transactional user cloud storage?
 5. What is the minimum activation package extension required for CURRENT?
-

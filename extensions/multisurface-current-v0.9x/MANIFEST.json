@@ -1,15 +1,15 @@
 {
   "manifest_id": "manifest_espina_v09x_multisurface_current_draft_20260807",
   "manifest_version": "v0.9x-draft",
-  "created_at": "2026-08-07T08:26:08Z",
+  "created_at": "2026-08-07T09:10:28Z",
   "created_by": "build_extension_manifest.py",
   "scope": "Espina v0.9.x Multisurface CURRENT Extension Draft",
   "private_material_excluded": true,
   "files": [
     {
       "path": "ESPINA_v0.9x_MULTISURFACE_CURRENT_EXTENSION_DRAFT.md",
-      "sha256": "sha256:0b1ec8dc5726427607988836c60528c831c8f2decb14259f90e1ecb6bbd2b623",
-      "size_bytes": 6303
+      "sha256": "sha256:e3cf3e6ad33c2370baddfcae5bfd5bb1b69de214b0bd6251844f5fc9b76a006e",
+      "size_bytes": 7148
     },
     {
       "path": "examples/ana_rc/activation/activation_package_001.json",
@@ -23,8 +23,8 @@
     },
     {
       "path": "examples/ana_rc/current/events/2026-08-07.jsonl",
-      "sha256": "sha256:c8b81add6d1c5b0335517d5bb371ad5e7573f481d94b85c0a1cf378f361c780f",
-      "size_bytes": 457
+      "sha256": "sha256:b489b2b9ba6a2821957c3448f805cbe2c685247fe24cdba67ef167752164d679",
+      "size_bytes": 565
     },
     {
       "path": "examples/ana_rc/current/state/CONTINUITY_STATUS.json",
@@ -62,9 +62,29 @@
       "size_bytes": 554
     },
     {
+      "path": "LICENSE-NOTES.md",
+      "sha256": "sha256:ff8717d17d1b69c5c70b60a41fca6772137757dcec9f32220e43fb25221a5af1",
+      "size_bytes": 742
+    },
+    {
+      "path": "PR_DRAFT.md",
+      "sha256": "sha256:212cddc0bd3da4c1a8db27f49b64d44297f59761af62b8bcf95a2fded51f9ebc",
+      "size_bytes": 4044
+    },
+    {
       "path": "README.md",
-      "sha256": "sha256:010587b42b9f5bd6b5abd963eb4f09022f2c5d8fb3f43671f36b348491a3483c",
-      "size_bytes": 1182
+      "sha256": "sha256:482a20ba1df9432145fde83bd39c2275b33a2f9c197264010a6eb52de69f84b0",
+      "size_bytes": 1915
+    },
+    {
+      "path": "reports/phase22_jsonschema_validation.md",
+      "sha256": "sha256:ccb72ea271d596bf69b3c08a603a683e76333d34373a4ef19d4d702e0144b035",
+      "size_bytes": 664
+    },
+    {
+      "path": "reports/phase23_event_chain_validation.md",
+      "sha256": "sha256:d30ceefa4f5b503cb89fdb09847660f885920c549fb5edd6e030b05cd8beae3b",
+      "size_bytes": 272
     },
     {
       "path": "schemas/activation_package.schema.json",
@@ -78,8 +98,8 @@
     },
     {
       "path": "schemas/current_event.schema.json",
-      "sha256": "sha256:685f9db3b991fa3b5d3e72be7fe41ab501e9941c4e8c2ccbd474ee8c7fbaf067",
-      "size_bytes": 1182
+      "sha256": "sha256:d9213933f9ed61ee4d244d497928eaec385322bdb796e640f91edcb44e49a094",
+      "size_bytes": 1605
     },
     {
       "path": "schemas/surface_registry.schema.json",
@@ -102,10 +122,20 @@
       "size_bytes": 4069
     },
     {
+      "path": "tools/validate_event_chain.py",
+      "sha256": "sha256:e1e74850aeac7f7128644ce49e6f445560ed0586635b9877a9e0477baf1fd9a1",
+      "size_bytes": 4239
+    },
+    {
+      "path": "tools/validate_jsonschema.py",
+      "sha256": "sha256:f3209b0eb8b45db8a1e5a2cf80837d6736979d54d2b6ca3af1aa373ede8a3e62",
+      "size_bytes": 3082
+    },
+    {
       "path": "tools/validate_rc_current.ps1",
       "sha256": "sha256:9655fd984b1ffdcbce9435337658143fef5ad2bc7c73e2b7281a0e207c9afed6",
       "size_bytes": 8186
     }
   ],
-  "manifest_checksum": "sha256:07f578ac6454f2640a0d823cd02b5f2291c6d87dc5935071f0cd69996ef1fffa"
+  "manifest_checksum": "sha256:3c41755ee586c6e908df27edc60e7743a753b8a7d6fe53ecce8baed932144631"
 }

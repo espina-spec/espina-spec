@@ -3,7 +3,7 @@
   "$id": "https://espina.example/schemas/current_event.schema.json",
   "title": "Espina CURRENT Event",
   "type": "object",
-  "required": ["event_id", "timestamp", "rc_id", "surface", "event_type", "world", "summary"],
+  "required": ["event_id", "timestamp", "rc_id", "surface", "event_type", "world", "summary", "previous_hash", "event_hash"],
   "additionalProperties": false,
   "properties": {
     "event_id": { "type": "string", "minLength": 1 },
@@ -16,6 +16,16 @@
     },
     "world": { "type": "string", "minLength": 1 },
     "summary": { "type": "string", "minLength": 1 },
+    "previous_hash": {
+      "description": "Hash of the previous canonical event payload, or null for the first event in a chain.",
+      "type": ["string", "null"],
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "event_hash": {
+      "description": "Hash of the canonical event payload with event_hash omitted.",
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
     "state_impact": { "type": "string" },
     "requires_commit": { "type": "boolean" },
     "authority": { "type": "string" },
