@@ -158,6 +158,14 @@ Schema:
 schemas/current_event.schema.json
 ```
 
+If two surfaces produce valid events from the same previous event hash, the runtime has a fork. Unreconciled forks MUST NOT produce `CONTINUITY_OK`.
+
+The non-normative concurrency note is:
+
+```text
+FORKS_AND_CONCURRENCY.md
+```
+
 ## 5. Permission Model
 
 This extension separates participation from governance.
@@ -211,6 +219,12 @@ Allowed storage patterns include:
 - application backend.
 
 Storage stores evidence and state. Espina governs. CURRENT situates. The surface instantiates. The engine responds.
+
+A non-normative minimal folder pattern is described in:
+
+```text
+DRIVE_BACKEND_MINIMAL.md
+```
 
 ## 8. Degraded Mode
 
@@ -271,6 +285,8 @@ A draft-compatible implementation should verify:
 - `active_surface` exists in `surface_registry`;
 - `continuity_status` is allowed by `current_contract`;
 - events parse as JSONL;
+- append-only event hashes are valid;
+- unreconciled forks do not produce `CONTINUITY_OK`;
 - the active surface has the required permission for attempted operation.
 
 The included validator is:
@@ -286,3 +302,4 @@ tools/validate_rc_current.ps1
 3. How should append-only events be signed?
 4. How should lock semantics work on non-transactional user cloud storage?
 5. What is the minimum activation package extension required for CURRENT?
+6. Should fork reconciliation become normative in Espina v1.0 or remain runtime-specific?

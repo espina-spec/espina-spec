@@ -35,6 +35,8 @@ reports/
 MANIFEST.json
 LICENSE-NOTES.md
 PR_DRAFT.md
+FORKS_AND_CONCURRENCY.md
+DRIVE_BACKEND_MINIMAL.md
 ```
 
 ## License

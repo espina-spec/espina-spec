@@ -1,15 +1,20 @@
 {
   "manifest_id": "manifest_espina_v09x_multisurface_current_draft_20260807",
   "manifest_version": "v0.9x-draft",
-  "created_at": "2026-08-07T09:10:28Z",
+  "created_at": "2026-08-07T09:51:55Z",
   "created_by": "build_extension_manifest.py",
   "scope": "Espina v0.9.x Multisurface CURRENT Extension Draft",
   "private_material_excluded": true,
   "files": [
     {
+      "path": "DRIVE_BACKEND_MINIMAL.md",
+      "sha256": "sha256:63fb04dd1e5fa78c4c1dfcfc73876c8a2685dd1860fa23ed09be1a609afe91c4",
+      "size_bytes": 2954
+    },
+    {
       "path": "ESPINA_v0.9x_MULTISURFACE_CURRENT_EXTENSION_DRAFT.md",
-      "sha256": "sha256:e3cf3e6ad33c2370baddfcae5bfd5bb1b69de214b0bd6251844f5fc9b76a006e",
-      "size_bytes": 7148
+      "sha256": "sha256:d14011ae8674b67fccda7247fb2d5061b8ecd1390ef352d731d6adb7f56aac7d",
+      "size_bytes": 7652
     },
     {
       "path": "examples/ana_rc/activation/activation_package_001.json",
@@ -62,6 +67,11 @@
       "size_bytes": 554
     },
     {
+      "path": "FORKS_AND_CONCURRENCY.md",
+      "sha256": "sha256:fc8422ab004e93d56cfb3a9d8485e9f4139d2a8d634dc7e9bcfd71ae32d0e8ff",
+      "size_bytes": 4852
+    },
+    {
       "path": "LICENSE-NOTES.md",
       "sha256": "sha256:ff8717d17d1b69c5c70b60a41fca6772137757dcec9f32220e43fb25221a5af1",
       "size_bytes": 742
@@ -73,8 +83,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "sha256:482a20ba1df9432145fde83bd39c2275b33a2f9c197264010a6eb52de69f84b0",
-      "size_bytes": 1915
+      "sha256": "sha256:09c0512d3a3f0ed410899347d5ad512381947a3e079f041cf6050227bbf0e64e",
+      "size_bytes": 1965
     },
     {
       "path": "reports/phase22_jsonschema_validation.md",
@@ -137,5 +147,5 @@
       "size_bytes": 8186
     }
   ],
-  "manifest_checksum": "sha256:3c41755ee586c6e908df27edc60e7743a753b8a7d6fe53ecce8baed932144631"
+  "manifest_checksum": "sha256:fe40ab2cbac57924ad58e1c8386654723540e3271e92f8be59d73a12b82dc42f"
 }
