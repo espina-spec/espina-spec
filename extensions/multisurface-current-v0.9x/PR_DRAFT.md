@@ -16,6 +16,9 @@ The extension defines portable contracts for:
 - activation package structure;
 - permission-separated update flow;
 - append-only CURRENT event chain;
+- fork detection and concurrency safety;
+- minimal Drive-style backend pattern;
+- LLM reentry playbook;
 - degraded operation without false continuity.
 
 It is intentionally scoped as an experimental draft. It does not define a production runtime, sync backend, product UX, commercial onboarding flow, or subjective-continuity claim.
@@ -34,7 +37,12 @@ It is intentionally scoped as an experimental draft. It does not define a produc
   - structural RC/CURRENT validation;
   - JSON Schema validation;
   - append-only event chain validation;
+  - minimal Drive-style backend validation;
   - extension manifest generation.
+- Added non-normative implementation notes:
+  - `FORKS_AND_CONCURRENCY.md`;
+  - `DRIVE_BACKEND_MINIMAL.md`;
+  - `LLM_REENTRY_PLAYBOOK.md`.
 - Added manifest with SHA-256 inventory.
 - Added license notes for text, schemas, structured examples, and tooling.
 - Added a README and changelog/root README pointers.
@@ -47,6 +55,7 @@ Expected local checks before opening the PR:
 powershell -NoProfile -ExecutionPolicy Bypass -File "extensions/multisurface-current-v0.9x/tools/validate_rc_current.ps1" -ExamplePath "extensions/multisurface-current-v0.9x/examples/ana_rc"
 python "extensions/multisurface-current-v0.9x/tools/validate_jsonschema.py"
 python "extensions/multisurface-current-v0.9x/tools/validate_event_chain.py"
+python "extensions/multisurface-current-v0.9x/tools/validate_drive_backend_minimal.py" "<path-to-ESPINA_RC_DRIVE_MINIMAL>"
 python "extensions/multisurface-current-v0.9x/tools/build_extension_manifest.py" "extensions/multisurface-current-v0.9x"
 ```
 
@@ -56,6 +65,7 @@ Current local results:
 validate_rc_current.ps1: PASS, 9 checks, 0 failures
 validate_jsonschema.py: PASS, 4 targets, 0 failures
 validate_event_chain.py: PASS, 1 event, 0 failures
+validate_drive_backend_minimal.py: PASS on private Aster Drive backend, 29 passes, 0 warnings, 0 failures
 ```
 
 ## Privacy Review
@@ -65,6 +75,12 @@ The extension contains only synthetic examples and public-facing schemas.
 Private Aster, Claudio, Drive, Bookshelf, client, and runtime material are excluded.
 
 Current local privacy scan only returns negative exclusion statements in `README.md` and `LICENSE-NOTES.md`.
+
+The private Aster Drive-minimal backend exists only outside this public extension and must not be copied into this PR:
+
+```text
+private/aster_drive_minimal/
+```
 
 ## Licensing
 
@@ -82,7 +98,9 @@ This should be reviewed before merge if the repository has stricter licensing co
 
 - The extension may be mistaken for a normative Espina v1.0 requirement if not clearly labeled as draft.
 - JSON Schema validation currently covers the main JSON artifacts, not every possible runtime object.
-- The append-only chain validates hash continuity, but does not yet solve concurrent forks or multi-surface conflict resolution.
+- The append-only chain validates hash continuity and the draft documents fork handling, but production fork reconciliation remains runtime-specific.
+- The minimal Drive backend is a folder contract and validator, not a Google Drive API connector.
+- The LLM reentry playbook is an operational guide, not an autonomous runtime.
 - The manifest provides integrity evidence, but not cryptographic signing by a human authority.
 - Terminology around `CURRENT`, `surface`, `room`, and `center_profile` may need broader review before public stabilization.
 
@@ -93,8 +111,9 @@ This should be reviewed before merge if the repository has stricter licensing co
 - Mobile or desktop product UX.
 - Runtime authority management.
 - Human signing workflow.
-- Fork resolution protocol.
+- Production fork resolution protocol.
 - Commercial Aster RC Technologies implementation.
+- Private Aster Drive backend.
 
 ## Reviewer Checklist
 
@@ -104,6 +123,8 @@ This should be reviewed before merge if the repository has stricter licensing co
 - [ ] Run structural validator.
 - [ ] Run JSON Schema validator.
 - [ ] Run append-only event chain validator.
+- [ ] Run Drive backend minimal validator against a local/private folder only.
+- [ ] Confirm `private/aster_drive_minimal/` is not present in the PR.
 - [ ] Review terminology for `CURRENT`, `surface`, `room`, `engine`, and `center_profile`.
 - [ ] Decide whether this remains v0.9.x extension or becomes part of a future v1.0 proposal.
 
