@@ -1,0 +1,24 @@
+{
+  "status": "PASS_INSTALLABLE_RUNTIME_WITH_SANITIZED_LAB_PROOFS",
+  "passes": 14,
+  "warnings": 0,
+  "failures": 0,
+  "pass_items": [
+    "exists:README.md",
+    "exists:install_rc.py",
+    "exists:drive_current_generic.py",
+    "exists:surface_cli.py",
+    "exists:validate_installable_runtime.py",
+    "activation_package_example:exists",
+    "generic_read_report:exists",
+    "generic_append_report:exists",
+    "revocation_report:exists",
+    "privacy_export_report:exists",
+    "free_private_boundary:exists",
+    "generic_surface_append_verified:true",
+    "surface_revocation_verified:true",
+    "privacy_export_verified:true"
+  ],
+  "warning_items": [],
+  "failure_items": []
+}

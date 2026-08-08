@@ -1,0 +1,20 @@
+{
+  "status": "CONTINUITY_PARTIAL",
+  "reason": "Ejemplo local sin backend real ni firma de eventos.",
+  "verified_sources": [
+    "espina/world_registry.json",
+    "espina/surface_registry.json",
+    "espina/current_contract.json",
+    "current/CURRENT_POINTER.json",
+    "current/state/CURRENT_STATE.json"
+  ],
+  "missing_sources": [
+    "manifest firmado",
+    "hashes",
+    "backend sincronizado",
+    "historial real de eventos"
+  ],
+  "allowed_claim": "Puedo operar como ejemplo de continuidad parcial.",
+  "forbidden_claim": "No debo afirmar continuidad real ni estado plenamente verificado.",
+  "updated_at": "2026-08-07T08:35:00Z"
+}

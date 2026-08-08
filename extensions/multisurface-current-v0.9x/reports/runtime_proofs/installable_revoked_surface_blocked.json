@@ -1,0 +1,9 @@
+{
+  "status": "SURFACE_REVOKED_BLOCKED_VERIFIED",
+  "timestamp": "2026-08-08T07:55:00Z",
+  "surface": "surface_revoked_lab",
+  "attempted_event_id": "lab_rc_evt_2026_08_08_0078_blocked",
+  "expected_result": "blocked_before_remote_write",
+  "actual_error": "PermissionError: surface_revoked:surface_revoked_lab",
+  "remote_mutation": false
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PRIVACY_EXPORT_VERIFIED",
+  "export_required": true,
+  "deletion_required": true,
+  "export_file_count": 7,
+  "files": [
+    {
+      "path": "00_espina/rc_identity.json",
+      "bytes": 1003
+    },
+    {
+      "path": "00_espina/surface_registry.json",
+      "bytes": 1435
+    },
+    {
+      "path": "00_espina/export_policy.json",
+      "bytes": 374
+    },
+    {
+      "path": "01_current/CURRENT_POINTER.json",
+      "bytes": 833
+    },
+    {
+      "path": "01_current/state/CURRENT_STATE.json",
+      "bytes": 1796
+    },
+    {
+      "path": "01_current/state/OPEN_LOOPS.json",
+      "bytes": 823
+    },
+    {
+      "path": "01_current/events/2026-08-08.jsonl",
+      "bytes": 2567
+    }
+  ],
+  "missing": [],
+  "delete_procedure": "Revoke all surfaces, export files above, then delete or trash the remote folder using the owner OAuth account."
+}

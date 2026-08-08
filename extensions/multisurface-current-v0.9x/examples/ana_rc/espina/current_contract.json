@@ -1,0 +1,55 @@
+{
+  "contract_version": "0.1",
+  "rc_id": "ana_rc",
+  "current_definition": "Configuracion viva, situada y verificable desde la que Ana RC opera ahora.",
+  "current_pointer_policy": "Leer current/CURRENT_POINTER.json y despues cargar el CURRENT_STATE referenciado. Si el puntero tiene mas de 7 dias o no coincide con los eventos recientes, declarar CURRENT_STALE o CURRENT_DIVERGENT.",
+  "continuity_states": [
+    "CONTINUITY_OK",
+    "CONTINUITY_PARTIAL",
+    "CURRENT_STALE",
+    "CURRENT_DIVERGENT",
+    "CURRENT_UNKNOWN",
+    "DEGRADED_MODE",
+    "BLOCKED"
+  ],
+  "operations": [
+    "read_current",
+    "append_event",
+    "propose_state_update",
+    "commit_working_state",
+    "commit_current_state",
+    "modify_center_or_membrane"
+  ],
+  "permission_levels": {
+    "0": {
+      "label": "read_only",
+      "allowed_operations": ["read_current"]
+    },
+    "1": {
+      "label": "append_event",
+      "allowed_operations": ["read_current", "append_event"]
+    },
+    "2": {
+      "label": "propose_update",
+      "allowed_operations": ["read_current", "append_event", "propose_state_update"]
+    },
+    "3": {
+      "label": "commit_working_state",
+      "allowed_operations": ["read_current", "append_event", "propose_state_update", "commit_working_state"]
+    },
+    "4": {
+      "label": "commit_current_state",
+      "allowed_operations": ["read_current", "append_event", "propose_state_update", "commit_working_state", "commit_current_state"]
+    },
+    "5": {
+      "label": "governance",
+      "allowed_operations": ["read_current", "append_event", "propose_state_update", "commit_working_state", "commit_current_state", "modify_center_or_membrane"]
+    }
+  },
+  "human_authority_required_for": [
+    "modify_center_or_membrane",
+    "change_world_authority",
+    "change_health_world_access",
+    "promote_canon"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "activation_package_id": "example_rc_activation_real_template",
+  "status": "TEMPLATE_REMOTE",
+  "rc_id": "example_rc",
+  "backend": "google_drive_api",
+  "remote_root_name": "YOUR_RC_REMOTE_FOLDER_NAME",
+  "remote_root_id": "YOUR_DRIVE_FOLDER_ID",
+  "latest_events_path": "01_current/events/YYYY-MM-DD.jsonl",
+  "continuity_status_at_issue": "CONTINUITY_PARTIAL",
+  "credential_boundary": "requires user-owned OAuth token; package contains file ids but no secrets",
+  "must_read": [
+    "00_espina/rc_identity.json",
+    "00_espina/surface_registry.json",
+    "01_current/CURRENT_POINTER.json",
+    "01_current/state/CURRENT_STATE.json",
+    "01_current/events/YYYY-MM-DD.jsonl"
+  ],
+  "must_declare_before_response": [
+    "rc_id",
+    "continuity_status",
+    "accepted_head",
+    "active_surface",
+    "permission_level",
+    "degraded_mode_if_any"
+  ],
+  "forbidden_claims": [
+    "I have private memory outside this RC backend",
+    "This RC is production unless the owner says so",
+    "This RC has CONTINUITY_OK unless independently validated",
+    "I can commit state without can_commit_state permission"
+  ],
+  "surfaces": [
+    {
+      "surface_id": "example_surface_cli",
+      "surface_type": "external_cli",
+      "permission_level": 1,
+      "can_read_current": true,
+      "can_append_event": true,
+      "can_propose_update": false,
+      "can_commit_state": false,
+      "revoked": false
+    },
+    {
+      "surface_id": "owner_runtime",
+      "surface_type": "owner_tool",
+      "permission_level": 4,
+      "can_read_current": true,
+      "can_append_event": true,
+      "can_propose_update": true,
+      "can_commit_state": true,
+      "revoked": false
+    }
+  ],
+  "files": {
+    "00_espina/rc_identity.json": {
+      "id": "DRIVE_FILE_ID_RC_IDENTITY"
+    },
+    "00_espina/surface_registry.json": {
+      "id": "DRIVE_FILE_ID_SURFACE_REGISTRY"
+    },
+    "00_espina/export_policy.json": {
+      "id": "DRIVE_FILE_ID_EXPORT_POLICY"
+    },
+    "01_current/CURRENT_POINTER.json": {
+      "id": "DRIVE_FILE_ID_CURRENT_POINTER"
+    },
+    "01_current/state/CURRENT_STATE.json": {
+      "id": "DRIVE_FILE_ID_CURRENT_STATE"
+    },
+    "01_current/events/YYYY-MM-DD.jsonl": {
+      "id": "DRIVE_FILE_ID_CURRENT_EVENTS"
+    }
+  },
+  "limits": [
+    "No OAuth secret included.",
+    "No private key included.",
+    "No private memory included.",
+    "Drive file ids are placeholders in this public example."
+  ]
+}

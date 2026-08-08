@@ -1,0 +1,7 @@
+{
+  "status": "GENERIC_APPEND_VERIFIED",
+  "event_id": "lab_rc_evt_2026_08_08_0077_0001",
+  "event_hash": "sha256:6389c0cfeebc8e8265c1efbcfdaa0a52532d915a08f3bdf0129efda83e8767ed",
+  "previous_hash": "sha256:48a064c7071d0282a20082a1a214772d07184aae8ea3cfc00c416d603ccb1666",
+  "surface": "surface_cli_external_lab"
+}

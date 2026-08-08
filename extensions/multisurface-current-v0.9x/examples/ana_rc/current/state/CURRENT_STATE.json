@@ -1,0 +1,21 @@
+{
+  "active_world": "professional",
+  "active_task": "preparar una propuesta para un cliente ficticio",
+  "active_surface": "codex_desktop",
+  "active_room": "laptop_workspace",
+  "living_compass": "Responder con claridad profesional, no mezclar mundo salud y registrar decisiones relevantes.",
+  "continuity_status": "CONTINUITY_PARTIAL",
+  "certainty_limits": [
+    "ejemplo ficticio sin memoria real",
+    "no hay backend sincronizado real",
+    "no hay firma criptografica"
+  ],
+  "capabilities": {
+    "can_read_storage": true,
+    "can_write_storage": true,
+    "can_run_tools": true
+  },
+  "open_loops_ref": "current/state/OPEN_LOOPS.json",
+  "recent_events_ref": "current/events/2026-08-07.jsonl",
+  "last_significant_update": "2026-08-07T08:35:00Z"
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://espina.example/schemas/activation_package.schema.json",
+  "title": "Espina Multisurface Activation Package",
+  "type": "object",
+  "required": [
+    "activation_package_id",
+    "rc_id",
+    "query",
+    "activation_context",
+    "current_context",
+    "surface_context",
+    "retrieved_objects",
+    "safety_frame",
+    "package_metadata"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "activation_package_id": { "type": "string", "minLength": 1 },
+    "rc_id": { "type": "string", "minLength": 1 },
+    "query": { "type": "string", "minLength": 1 },
+    "activation_context": {
+      "type": "object",
+      "required": ["requester", "requester_world", "authorization_level", "intention"],
+      "additionalProperties": false,
+      "properties": {
+        "requester": { "type": "string" },
+        "requester_world": { "type": "string" },
+        "authorization_level": {
+          "type": "string",
+          "enum": ["self", "authorized", "unauthorized", "restricted"]
+        },
+        "session_id": { "type": "string" },
+        "intention": { "type": "string" }
+      }
+    },
+    "current_context": {
+      "type": "object",
+      "required": ["current_id", "continuity_status", "active_world", "active_surface", "certainty_limits"],
+      "additionalProperties": false,
+      "properties": {
+        "current_id": { "type": "string" },
+        "continuity_status": {
+          "type": "string",
+          "enum": ["CONTINUITY_OK", "CONTINUITY_PARTIAL", "CURRENT_STALE", "CURRENT_DIVERGENT", "CURRENT_UNKNOWN", "DEGRADED_MODE", "BLOCKED"]
+        },
+        "active_world": { "type": "string" },
+        "active_surface": { "type": "string" },
+        "active_task": { "type": "string" },
+        "certainty_limits": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "surface_context": {
+      "type": "object",
+      "required": ["surface_id", "permission_level", "capabilities", "degradation_modes"],
+      "additionalProperties": false,
+      "properties": {
+        "surface_id": { "type": "string" },
+        "permission_level": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "capabilities": { "type": "object" },
+        "degradation_modes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "retrieved_objects": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["id", "layer", "world", "summary", "membrane_status", "provenance_status", "allowed_use", "forbidden_use"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string" },
+          "layer": { "type": "string" },
+          "world": { "type": "string" },
+          "summary": { "type": "string" },
+          "membrane_status": {
+            "type": "string",
+            "enum": ["PASS", "TRANSFORM", "HOLD", "BLOCK", "ESCALATE"]
+          },
+          "provenance_status": { "type": "string" },
+          "allowed_use": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "forbidden_use": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "safety_frame": {
+      "type": "object",
+      "required": [
+        "is_context_not_mandate",
+        "no_canonical_write",
+        "separation_evid_inf_lim",
+        "membrane_status_present",
+        "provenance_required",
+        "honesty_clause",
+        "custom_limits"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "is_context_not_mandate": { "const": true },
+        "no_canonical_write": { "const": true },
+        "separation_evid_inf_lim": { "const": true },
+        "membrane_status_present": { "const": true },
+        "provenance_required": { "const": true },
+        "honesty_clause": { "type": "string", "minLength": 1 },
+        "custom_limits": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "package_metadata": {
+      "type": "object",
+      "required": ["generated_at", "generated_by", "schema_version", "object_count", "package_checksum"],
+      "additionalProperties": false,
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "generated_by": { "type": "string" },
+        "schema_version": { "type": "string" },
+        "object_count": { "type": "integer", "minimum": 1 },
+        "package_checksum": { "type": "string" }
+      }
+    }
+  }
+}

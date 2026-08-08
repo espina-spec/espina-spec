@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+**Draft extensions:**
+- Add `extensions/multisurface-current-v0.9x/` as an experimental draft for multisurface reentry, CURRENT state, continuity status, surface registry, and activation packages with CURRENT context.
+- This draft preserves v0.9's honesty clause: activation is continuity of operational record, not proof of continuous subjective experience.
+- Includes synthetic `ana_rc` example, JSON schemas, validation tooling, and an extension manifest.
+- Add installable runtime prototype with local RC installer, generic BYOK Drive connector, surface CLI, revocation proof, privacy/export proof, and sanitized lab reports for review.
+- Add sanitized external real-account proof report for a controlled second-RC test with user-owned OAuth/Drive backend, remote CURRENT read, authorized append, unauthorized commit block, privacy/export proof, and Ed25519 attestation signature.
+
 ## v0.9 — 2026-07-28
 
 Primera versión pública de la especificación Espina (EPM v0.9).

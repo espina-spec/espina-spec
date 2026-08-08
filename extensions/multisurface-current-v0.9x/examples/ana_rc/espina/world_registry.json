@@ -1,0 +1,31 @@
+{
+  "registry_version": "1.0",
+  "rc_id": "ana_rc",
+  "worlds": {
+    "personal": {
+      "label": "Personal",
+      "description": "Vida personal no profesional.",
+      "status": "active",
+      "authority": "human_root",
+      "default_sensitivity": "private",
+      "allowed_destinations": ["personal"]
+    },
+    "professional": {
+      "label": "Professional",
+      "description": "Trabajo, clientes y tareas profesionales.",
+      "status": "active",
+      "authority": "human_root",
+      "default_sensitivity": "client_identifiable",
+      "allowed_destinations": ["professional"]
+    },
+    "health": {
+      "label": "Health",
+      "description": "Informacion de salud o bienestar sensible.",
+      "status": "restricted",
+      "authority": "explicit_human_confirmation",
+      "default_sensitivity": "high",
+      "allowed_destinations": ["health"],
+      "notes": "No se mezcla con otros mundos sin confirmacion explicita."
+    }
+  }
+}

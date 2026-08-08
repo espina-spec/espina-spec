@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://espina.example/schemas/surface_registry.schema.json",
+  "title": "Espina Surface Registry",
+  "type": "object",
+  "required": ["registry_version", "rc_id", "surfaces"],
+  "additionalProperties": false,
+  "properties": {
+    "registry_version": { "type": "string" },
+    "rc_id": { "type": "string", "minLength": 1 },
+    "surfaces": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["type", "permission_level", "capabilities"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["llm_chat", "agent_workspace", "messaging_surface", "mobile_app", "web_app", "api", "local_app"]
+          },
+          "permission_level": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "capabilities": {
+            "type": "object",
+            "required": ["can_read_storage", "can_write_storage", "can_run_tools"],
+            "additionalProperties": false,
+            "properties": {
+              "can_read_storage": { "type": "boolean" },
+              "can_write_storage": { "type": "boolean" },
+              "can_run_tools": { "type": "boolean" },
+              "can_send_messages": { "type": "boolean" },
+              "can_receive_files": { "type": "boolean" }
+            }
+          },
+          "degradation_modes": {
+            "type": "array",
+            "items": { "type": "string" },
+            "uniqueItems": true
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}
