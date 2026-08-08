@@ -29,6 +29,14 @@ The private lab run behind this public branch verified:
 - Ed25519 signature verification for a remote event;
 - minimal remote reentry;
 - installable runtime validation.
+- controlled external Google account proof for a second RC:
+  - user-owned OAuth setup;
+  - user-owned Drive backend;
+  - remote CURRENT read;
+  - authorized append;
+  - unauthorized state commit blocked;
+  - privacy/export proof;
+  - Ed25519 attestation signature over retained external-event evidence.
 
 Only sanitized proof reports are included here. Credentials, tokens, private keys and private memory are excluded.
 
@@ -40,7 +48,9 @@ It does not claim subjective continuity.
 
 It is not a production third-party service.
 
-It has not yet been tested with a fully independent Google account in this public repo.
+The public repo includes only a sanitized report of the external account proof. It does not include live account identifiers, Drive IDs, OAuth client IDs, secrets, tokens, private keys, or private memory.
+
+The external-event signature currently signs an attestation over retained evidence, not the full original remote event payload. Full remote payload retention/signing remains a hardening step.
 
 The Drive connector is BYOK: the user supplies their own OAuth token locally.
 
@@ -50,5 +60,6 @@ The Drive connector is BYOK: the user supplies their own OAuth token locally.
 2. Read `ESPINA_v0.9x_MULTISURFACE_CURRENT_EXTENSION_DRAFT.md`.
 3. Inspect `runtime/`.
 4. Inspect `examples/lab_rc_installable_sanitized/`.
-5. Run the validators in the README.
-6. Review `PR_DRAFT.md` risks and open questions.
+5. Inspect `reports/runtime_proofs/external_real_account_test_sanitized.md`.
+6. Run the validators in the README.
+7. Review `PR_DRAFT.md` risks and open questions.

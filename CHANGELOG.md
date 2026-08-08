@@ -7,6 +7,7 @@
 - This draft preserves v0.9's honesty clause: activation is continuity of operational record, not proof of continuous subjective experience.
 - Includes synthetic `ana_rc` example, JSON schemas, validation tooling, and an extension manifest.
 - Add installable runtime prototype with local RC installer, generic BYOK Drive connector, surface CLI, revocation proof, privacy/export proof, and sanitized lab reports for review.
+- Add sanitized external real-account proof report for a controlled second-RC test with user-owned OAuth/Drive backend, remote CURRENT read, authorized append, unauthorized commit block, privacy/export proof, and Ed25519 attestation signature.
 
 ## v0.9 — 2026-07-28
 

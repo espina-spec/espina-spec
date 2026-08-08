@@ -38,6 +38,7 @@ tools/validate_drive_backend_minimal.py
 tools/build_extension_manifest.py
 reports/
 reports/runtime_proofs/
+reports/runtime_proofs/external_real_account_test_sanitized.md
 MANIFEST.json
 LICENSE-NOTES.md
 PR_DRAFT.md
@@ -71,6 +72,14 @@ The `runtime/` folder contains a small reference prototype:
 - `validate_installable_runtime.py` validates the prototype and sanitized lab proof reports.
 
 The prototype is BYOK. It does not include OAuth secrets, OAuth tokens, private signing keys, or private memory.
+
+## Sanitized External Account Proof
+
+The private lab has also verified the installable runtime against a real external Google account with a separate user-owned Drive backend and OAuth setup. A sanitized public-review report is included at:
+
+[`reports/runtime_proofs/external_real_account_test_sanitized.md`](reports/runtime_proofs/external_real_account_test_sanitized.md)
+
+The report excludes live emails, Drive IDs, OAuth client IDs, OAuth secrets, tokens, private signing keys, and private memory.
 
 ## Validation
 

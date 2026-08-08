@@ -1,15 +1,15 @@
 {
   "manifest_id": "manifest_espina_v09x_multisurface_current_draft_20260807",
   "manifest_version": "v0.9x-draft",
-  "created_at": "2026-08-08T09:08:40Z",
+  "created_at": "2026-08-08T12:18:12Z",
   "created_by": "build_extension_manifest.py",
   "scope": "Espina v0.9.x Multisurface CURRENT Extension Draft",
   "private_material_excluded": true,
   "files": [
     {
       "path": "ALBERTO_REVIEW_BRIEF.md",
-      "sha256": "sha256:292cb8352dd323d7c9adf9a3aab82ba29d94bfeea02ce7a627e127dc0d0222d5",
-      "size_bytes": 1760
+      "sha256": "sha256:5ec139c5bc60d7d73c6219fc7ec97fe2333fd3d598dce6f2c2aa55bbe4464bb7",
+      "size_bytes": 2451
     },
     {
       "path": "DRIVE_BACKEND_MINIMAL.md",
@@ -108,8 +108,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "sha256:c508a8aac2b95dbd42e37e063054bc1c92500f6a7f4677579de73f42e2a4cded",
-      "size_bytes": 3341
+      "sha256": "sha256:d5f9d1f060c777f961494c287dc8f990f1431956df80c898ddb41a9fb1c59f98",
+      "size_bytes": 3906
     },
     {
       "path": "reports/phase22_jsonschema_validation.md",
@@ -120,6 +120,11 @@
       "path": "reports/phase23_event_chain_validation.md",
       "sha256": "sha256:ed61f6d23e35361c76bac4db888e9c39d1eb530ce4e0913b188572c1f5f2752a",
       "size_bytes": 355
+    },
+    {
+      "path": "reports/runtime_proofs/external_real_account_test_sanitized.md",
+      "sha256": "sha256:82c0dafa4d5fa3352474eaefb8dd11b4878bb5822da83203d087ea95c7e0f834",
+      "size_bytes": 2854
     },
     {
       "path": "reports/runtime_proofs/installable_generic_read_current.json",
@@ -237,5 +242,5 @@
       "size_bytes": 8186
     }
   ],
-  "manifest_checksum": "sha256:4dcf47cb177c6582d6365ae30fee5c8606048001836b4163f9bd33e5426035dc"
+  "manifest_checksum": "sha256:795d2df1f138ff4a4a908a64ffc1ed5ad6322232d484e5c08de1f55e884d4cff"
 }
