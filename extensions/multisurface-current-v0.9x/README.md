@@ -25,14 +25,19 @@ This draft extends Espina v0.9 with portable contracts for:
 ```text
 README.md
 ESPINA_v0.9x_MULTISURFACE_CURRENT_EXTENSION_DRAFT.md
+ALBERTO_REVIEW_BRIEF.md
+FREE_PRIVATE_BOUNDARY.md
 schemas/
 examples/ana_rc/
+examples/lab_rc_installable_sanitized/
+runtime/
 tools/validate_rc_current.ps1
 tools/validate_jsonschema.py
 tools/validate_event_chain.py
 tools/validate_drive_backend_minimal.py
 tools/build_extension_manifest.py
 reports/
+reports/runtime_proofs/
 MANIFEST.json
 LICENSE-NOTES.md
 PR_DRAFT.md
@@ -51,9 +56,32 @@ If a file mixes explanatory text and machine-readable structure, use the more pe
 
 ## Non-goals
 
-This draft does not define a full runtime, product UX, backend connector, sync engine, or commercial onboarding system.
+This draft does not define a full product UX, sync engine, or commercial onboarding system.
 
-It specifies contracts that an implementation may support.
+It specifies contracts that an implementation may support and now includes a minimal installable runtime prototype for review.
+
+## Installable Runtime Prototype
+
+The `runtime/` folder contains a small reference prototype:
+
+- `install_rc.py` creates a local RC runtime skeleton;
+- `drive_current_generic.py` reads/appends to a remote CURRENT using an activation package and user-owned OAuth token;
+- `surface_cli.py` wraps the connector as a minimal surface SDK/CLI;
+- `privacy_export.py` emits an export/delete readiness manifest;
+- `validate_installable_runtime.py` validates the prototype and sanitized lab proof reports.
+
+The prototype is BYOK. It does not include OAuth secrets, OAuth tokens, private signing keys, or private memory.
+
+## Validation
+
+From the repository root:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "extensions/multisurface-current-v0.9x/tools/validate_rc_current.ps1" -ExamplePath "extensions/multisurface-current-v0.9x/examples/ana_rc"
+python "extensions/multisurface-current-v0.9x/tools/validate_jsonschema.py"
+python "extensions/multisurface-current-v0.9x/tools/validate_event_chain.py"
+python "extensions/multisurface-current-v0.9x/runtime/validate_installable_runtime.py" "extensions/multisurface-current-v0.9x/runtime"
+```
 
 ## Safety Rule
 

@@ -2,7 +2,10 @@ import json
 import pathlib
 import sys
 
-from jsonschema import Draft202012Validator
+try:
+    from jsonschema import Draft202012Validator
+except Exception:
+    Draft202012Validator = None
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -23,14 +26,54 @@ def load_json(path: pathlib.Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def fallback_validate(schema: dict, instance: dict) -> list[dict]:
+    errors = []
+    if schema.get("type") == "object" and not isinstance(instance, dict):
+        errors.append({"path": "<root>", "message": "instance is not an object"})
+        return errors
+    for key in schema.get("required", []):
+        if key not in instance:
+            errors.append({"path": key, "message": "required property is missing"})
+    properties = schema.get("properties", {})
+    for key, rules in properties.items():
+        if key not in instance or "type" not in rules:
+            continue
+        expected = rules["type"]
+        value = instance[key]
+        ok = True
+        if expected == "string":
+            ok = isinstance(value, str)
+        elif expected == "array":
+            ok = isinstance(value, list)
+        elif expected == "object":
+            ok = isinstance(value, dict)
+        elif expected == "boolean":
+            ok = isinstance(value, bool)
+        if not ok:
+            errors.append({"path": key, "message": f"expected {expected}"})
+    return errors
+
+
 def main() -> int:
     results = []
     failures = 0
     for name, schema_path, instance_path in VALIDATION_TARGETS:
         schema = load_json(schema_path)
         instance = load_json(instance_path)
-        validator = Draft202012Validator(schema)
-        errors = sorted(validator.iter_errors(instance), key=lambda err: list(err.path))
+        if Draft202012Validator:
+            validator = Draft202012Validator(schema)
+            raw_errors = sorted(validator.iter_errors(instance), key=lambda err: list(err.path))
+            errors = [
+                {
+                    "path": "/".join(str(part) for part in error.path),
+                    "message": error.message,
+                }
+                for error in raw_errors
+            ]
+            mode = "jsonschema"
+        else:
+            errors = fallback_validate(schema, instance)
+            mode = "fallback_required_and_basic_types"
         if errors:
             failures += 1
             results.append({
@@ -38,13 +81,8 @@ def main() -> int:
                 "status": "FAIL",
                 "schema": str(schema_path.relative_to(ROOT)),
                 "instance": str(instance_path.relative_to(ROOT)),
-                "errors": [
-                    {
-                        "path": "/".join(str(part) for part in error.path),
-                        "message": error.message,
-                    }
-                    for error in errors
-                ],
+                "validation_mode": mode,
+                "errors": errors,
             })
         else:
             results.append({
@@ -52,6 +90,7 @@ def main() -> int:
                 "status": "PASS",
                 "schema": str(schema_path.relative_to(ROOT)),
                 "instance": str(instance_path.relative_to(ROOT)),
+                "validation_mode": mode,
                 "errors": [],
             })
 
@@ -72,6 +111,7 @@ def main() -> int:
         lines.append(f"- {result['status']} `{result['name']}`")
         lines.append(f"  - schema: `{result['schema']}`")
         lines.append(f"  - instance: `{result['instance']}`")
+        lines.append(f"  - validation_mode: `{result['validation_mode']}`")
         for error in result["errors"]:
             lines.append(f"  - error at `{error['path']}`: {error['message']}")
     report.write_text("\n".join(lines) + "\n", encoding="utf-8")

@@ -1,0 +1,6 @@
+{
+  "status": "GENERIC_CURRENT_READ",
+  "rc_id": "lab_rc_prueba",
+  "accepted_head": "sha256:48a064c7071d0282a20082a1a214772d07184aae8ea3cfc00c416d603ccb1666",
+  "active_world": "lab_runtime"
+}

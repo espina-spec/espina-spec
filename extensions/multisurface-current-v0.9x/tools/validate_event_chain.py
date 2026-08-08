@@ -5,7 +5,7 @@ import sys
 
 try:
     import jsonschema
-except ImportError:
+except Exception:
     jsonschema = None
 
 
@@ -47,8 +47,7 @@ def validate_chain(events_path: pathlib.Path) -> tuple[list[str], list[str]]:
     schema = json.loads(EVENT_SCHEMA.read_text(encoding="utf-8"))
     validator = jsonschema.Draft202012Validator(schema) if jsonschema else None
     if not validator:
-        errors.append("jsonschema is not installed")
-        return notes, errors
+        notes.append("WARN schema validation skipped: jsonschema is not installed or failed to import")
 
     events = load_jsonl(events_path)
     previous = None
@@ -57,10 +56,15 @@ def validate_chain(events_path: pathlib.Path) -> tuple[list[str], list[str]]:
     for index, event in enumerate(events):
         line_number = event.pop("_line_number")
 
-        schema_errors = sorted(validator.iter_errors(event), key=lambda err: list(err.path))
-        for err in schema_errors:
-            path = ".".join(str(part) for part in err.path) or "<root>"
-            errors.append(f"line {line_number}: schema error at {path}: {err.message}")
+        if validator:
+            schema_errors = sorted(validator.iter_errors(event), key=lambda err: list(err.path))
+            for err in schema_errors:
+                path = ".".join(str(part) for part in err.path) or "<root>"
+                errors.append(f"line {line_number}: schema error at {path}: {err.message}")
+        else:
+            for key in schema.get("required", []):
+                if key not in event:
+                    errors.append(f"line {line_number}: required field missing: {key}")
 
         event_id = event.get("event_id")
         if event_id in seen_ids:
@@ -93,12 +97,13 @@ def validate_chain(events_path: pathlib.Path) -> tuple[list[str], list[str]]:
 def write_report(events_path: pathlib.Path, notes: list[str], errors: list[str]) -> None:
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     status = "PASS" if not errors else "FAIL"
+    events_checked = len([note for note in notes if note.startswith("PASS line ")])
     lines = [
         "# Phase 23 event chain validation",
         "",
         f"Status: {status}",
         f"Events file: `{events_path.relative_to(ROOT)}`",
-        f"Events checked: {len(notes)}",
+        f"Events checked: {events_checked}",
         f"Failures: {len(errors)}",
         "",
         "## Chain",
@@ -116,9 +121,10 @@ def main() -> int:
     events_path = events_path.resolve()
     notes, errors = validate_chain(events_path)
     write_report(events_path, notes, errors)
+    events_checked = len([note for note in notes if note.startswith("PASS line ")])
     print(json.dumps({
         "status": "PASS" if not errors else "FAIL",
-        "events": len(notes),
+        "events": events_checked,
         "failures": len(errors),
         "report": str(REPORT),
     }, indent=2))

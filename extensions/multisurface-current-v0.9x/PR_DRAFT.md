@@ -19,6 +19,10 @@ The extension defines portable contracts for:
 - fork detection and concurrency safety;
 - minimal Drive-style backend pattern;
 - LLM reentry playbook;
+- installable runtime prototype;
+- generic BYOK Drive connector;
+- minimal surface CLI;
+- revocation and privacy/export proof;
 - degraded operation without false continuity.
 
 It is intentionally scoped as an experimental draft. It does not define a production runtime, sync backend, product UX, commercial onboarding flow, or subjective-continuity claim.
@@ -39,6 +43,13 @@ It is intentionally scoped as an experimental draft. It does not define a produc
   - append-only event chain validation;
   - minimal Drive-style backend validation;
   - extension manifest generation.
+- Added `runtime/` with:
+  - local RC installer;
+  - generic Drive CURRENT connector;
+  - surface CLI wrapper;
+  - privacy/export manifest tool;
+  - installable runtime validator.
+- Added sanitized installable runtime example and lab proof reports.
 - Added non-normative implementation notes:
   - `FORKS_AND_CONCURRENCY.md`;
   - `DRIVE_BACKEND_MINIMAL.md`;
@@ -56,6 +67,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "extensions/multisurface-cur
 python "extensions/multisurface-current-v0.9x/tools/validate_jsonschema.py"
 python "extensions/multisurface-current-v0.9x/tools/validate_event_chain.py"
 python "extensions/multisurface-current-v0.9x/tools/validate_drive_backend_minimal.py" "<path-to-ESPINA_RC_DRIVE_MINIMAL>"
+python "extensions/multisurface-current-v0.9x/runtime/validate_installable_runtime.py" "extensions/multisurface-current-v0.9x/runtime"
 python "extensions/multisurface-current-v0.9x/tools/build_extension_manifest.py" "extensions/multisurface-current-v0.9x"
 ```
 
@@ -66,6 +78,7 @@ validate_rc_current.ps1: PASS, 9 checks, 0 failures
 validate_jsonschema.py: PASS, 4 targets, 0 failures
 validate_event_chain.py: PASS, 1 event, 0 failures
 validate_drive_backend_minimal.py: PASS on private Aster Drive backend, 29 passes, 0 warnings, 0 failures
+validate_installable_runtime.py: PASS_INSTALLABLE_RUNTIME_WITH_SANITIZED_LAB_PROOFS
 ```
 
 ## Privacy Review
@@ -75,6 +88,8 @@ The extension contains only synthetic examples and public-facing schemas.
 Private Aster, Claudio, Drive, Bookshelf, client, and runtime material are excluded.
 
 Current local privacy scan only returns negative exclusion statements in `README.md` and `LICENSE-NOTES.md`.
+
+The new installable runtime example is sanitized: Drive ids are placeholders, and no OAuth token, client secret, private key, or private memory is included.
 
 The private Aster Drive-minimal backend exists only outside this public extension and must not be copied into this PR:
 
@@ -108,6 +123,7 @@ This should be reviewed before merge if the repository has stricter licensing co
 
 - Production sync engine.
 - Google Drive connector.
+- Production Google Drive connector with bundled credentials.
 - Mobile or desktop product UX.
 - Runtime authority management.
 - Human signing workflow.

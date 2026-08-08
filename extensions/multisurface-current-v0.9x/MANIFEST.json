@@ -1,11 +1,16 @@
 {
   "manifest_id": "manifest_espina_v09x_multisurface_current_draft_20260807",
   "manifest_version": "v0.9x-draft",
-  "created_at": "2026-08-07T10:27:21Z",
+  "created_at": "2026-08-08T09:08:40Z",
   "created_by": "build_extension_manifest.py",
   "scope": "Espina v0.9.x Multisurface CURRENT Extension Draft",
   "private_material_excluded": true,
   "files": [
+    {
+      "path": "ALBERTO_REVIEW_BRIEF.md",
+      "sha256": "sha256:292cb8352dd323d7c9adf9a3aab82ba29d94bfeea02ce7a627e127dc0d0222d5",
+      "size_bytes": 1760
+    },
     {
       "path": "DRIVE_BACKEND_MINIMAL.md",
       "sha256": "sha256:80601039981371c1d7208f1d9c5a429b1a949822b4abac661f9d7bf41c45a3a0",
@@ -67,9 +72,24 @@
       "size_bytes": 554
     },
     {
+      "path": "examples/lab_rc_installable_sanitized/activation_package.example.json",
+      "sha256": "sha256:d6a4201c376696da53a1377d383d597517471f3028884be99c8ff4e460c6bfba",
+      "size_bytes": 2431
+    },
+    {
+      "path": "examples/lab_rc_installable_sanitized/README.md",
+      "sha256": "sha256:c6391de5116844bb5a8f53e6c8e2180f0c6982e01f520e14c185fcecf1c7f3ad",
+      "size_bytes": 399
+    },
+    {
       "path": "FORKS_AND_CONCURRENCY.md",
       "sha256": "sha256:fc8422ab004e93d56cfb3a9d8485e9f4139d2a8d634dc7e9bcfd71ae32d0e8ff",
       "size_bytes": 4852
+    },
+    {
+      "path": "FREE_PRIVATE_BOUNDARY.md",
+      "sha256": "sha256:bdcc1c05147394204e6e72a3d63104027c8b0356b1cdb3d05add531cea1d491a",
+      "size_bytes": 667
     },
     {
       "path": "LICENSE-NOTES.md",
@@ -83,23 +103,83 @@
     },
     {
       "path": "PR_DRAFT.md",
-      "sha256": "sha256:d3043d768c57b999ed97124bda20879bcea3217d5f52f15dce4ee2be81c936ca",
-      "size_bytes": 5112
+      "sha256": "sha256:d944b95564f79043dd694df5327822af67632b6c736a556eb934edc160eeb653",
+      "size_bytes": 5927
     },
     {
       "path": "README.md",
-      "sha256": "sha256:08a0a72a7fbe142b4ea2b251376af87673cc02cae3682d9e51c418d4598cd573",
-      "size_bytes": 2029
+      "sha256": "sha256:c508a8aac2b95dbd42e37e063054bc1c92500f6a7f4677579de73f42e2a4cded",
+      "size_bytes": 3341
     },
     {
       "path": "reports/phase22_jsonschema_validation.md",
-      "sha256": "sha256:ccb72ea271d596bf69b3c08a603a683e76333d34373a4ef19d4d702e0144b035",
-      "size_bytes": 664
+      "sha256": "sha256:5d9c97ac950dc1220728a5eb94450f1785a875a142cb7eadea84bf7f0286ff94",
+      "size_bytes": 896
     },
     {
       "path": "reports/phase23_event_chain_validation.md",
-      "sha256": "sha256:d30ceefa4f5b503cb89fdb09847660f885920c549fb5edd6e030b05cd8beae3b",
-      "size_bytes": 272
+      "sha256": "sha256:ed61f6d23e35361c76bac4db888e9c39d1eb530ce4e0913b188572c1f5f2752a",
+      "size_bytes": 355
+    },
+    {
+      "path": "reports/runtime_proofs/installable_generic_read_current.json",
+      "sha256": "sha256:486295a3c156c341ecb041de5522fa106869c7920f533cc84daa909c1485b5d5",
+      "size_bytes": 200
+    },
+    {
+      "path": "reports/runtime_proofs/installable_privacy_export.json",
+      "sha256": "sha256:820a650142df6c3c3bee697246f729c095490bfca8d04475da026615beb2be6f",
+      "size_bytes": 903
+    },
+    {
+      "path": "reports/runtime_proofs/installable_revoked_surface_blocked.json",
+      "sha256": "sha256:db39fd47e40ae7a0431906e3dce6739d421544ab52e4ca4663c5da0288716dfb",
+      "size_bytes": 342
+    },
+    {
+      "path": "reports/runtime_proofs/installable_runtime_validation.json",
+      "sha256": "sha256:938574a4b90d3416ec91593cba2b1db3152a3b934c896525c38171b5fd56cde8",
+      "size_bytes": 699
+    },
+    {
+      "path": "reports/runtime_proofs/installable_surface_append.json",
+      "sha256": "sha256:c43e8bea85907f28da468f1037842957068a029793771334a5e31c271ff93ad4",
+      "size_bytes": 324
+    },
+    {
+      "path": "runtime/drive_current_generic.py",
+      "sha256": "sha256:9e2c8447f710792882d5184a1ca2bffda5423b313b83d26da2c5817a7f734a8e",
+      "size_bytes": 6671
+    },
+    {
+      "path": "runtime/install_rc.py",
+      "sha256": "sha256:a0839554d7028f7389e1d8ba5e2fa9c98fe24fbc4bb364168b7a9a753e2d49ba",
+      "size_bytes": 5026
+    },
+    {
+      "path": "runtime/installable_runtime_validation.json",
+      "sha256": "sha256:4a09b0959f8ebc796815465fa1db274ba9cc3603872fe4fcc6c5906626078782",
+      "size_bytes": 712
+    },
+    {
+      "path": "runtime/privacy_export.py",
+      "sha256": "sha256:5668dba0fd1e481badbd9f34243a530c3aaeeee38474e354934e58c67f6ebdf5",
+      "size_bytes": 1947
+    },
+    {
+      "path": "runtime/README.md",
+      "sha256": "sha256:0ba887bd6a396c74bb6487037c2fef1b45675f053aa52e15628b8b93f89f6556",
+      "size_bytes": 761
+    },
+    {
+      "path": "runtime/surface_cli.py",
+      "sha256": "sha256:ea83b97ab1d4895de4e906588a421148294d3ffe9ffd1e177e5589c7a73e507d",
+      "size_bytes": 1884
+    },
+    {
+      "path": "runtime/validate_installable_runtime.py",
+      "sha256": "sha256:8feeb50cdce2235f2a88b13e404aa48bb2c5404f3077b50f29b376a02d077fca",
+      "size_bytes": 2986
     },
     {
       "path": "schemas/activation_package.schema.json",
@@ -143,13 +223,13 @@
     },
     {
       "path": "tools/validate_event_chain.py",
-      "sha256": "sha256:e1e74850aeac7f7128644ce49e6f445560ed0586635b9877a9e0477baf1fd9a1",
-      "size_bytes": 4239
+      "sha256": "sha256:bbf0ed2726e8f3012599a6d1af6e5bd57efcdbfb5e9085a28fafd0828b84ccb3",
+      "size_bytes": 4663
     },
     {
       "path": "tools/validate_jsonschema.py",
-      "sha256": "sha256:f3209b0eb8b45db8a1e5a2cf80837d6736979d54d2b6ca3af1aa373ede8a3e62",
-      "size_bytes": 3082
+      "sha256": "sha256:6e12aa5f6b93b1c5b6cf2bddea6f512d1769ffcc0fd320d8d6a2bc703749dc14",
+      "size_bytes": 4591
     },
     {
       "path": "tools/validate_rc_current.ps1",
@@ -157,5 +237,5 @@
       "size_bytes": 8186
     }
   ],
-  "manifest_checksum": "sha256:43f56f56d0300d85642429c9963bf8d224310e53c42e2a8ca03eb48d11249ec4"
+  "manifest_checksum": "sha256:4dcf47cb177c6582d6365ae30fee5c8606048001836b4163f9bd33e5426035dc"
 }

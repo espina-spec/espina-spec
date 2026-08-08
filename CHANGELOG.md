@@ -6,6 +6,7 @@
 - Add `extensions/multisurface-current-v0.9x/` as an experimental draft for multisurface reentry, CURRENT state, continuity status, surface registry, and activation packages with CURRENT context.
 - This draft preserves v0.9's honesty clause: activation is continuity of operational record, not proof of continuous subjective experience.
 - Includes synthetic `ana_rc` example, JSON schemas, validation tooling, and an extension manifest.
+- Add installable runtime prototype with local RC installer, generic BYOK Drive connector, surface CLI, revocation proof, privacy/export proof, and sanitized lab reports for review.
 
 ## v0.9 — 2026-07-28
 
